@@ -1,0 +1,31 @@
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fbfafd;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  > * {
+    height: 100%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #f7f7f7;
+  --color-dark-1: #333;
+
+  --color-primary-1: #8776f1;
+  --color-primary-2: #7964ff;
+  --color-secondary-1: #ff9900;
+  --color-gray-1: #b3b3b3;
+
+  --edge-padding: 20px;
+}

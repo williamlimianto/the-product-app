@@ -1,0 +1,31 @@
+$breakpoint_map: (
+  mobile: (
+    max-width: 839px
+  ),
+  desktop: (
+    min-width: 840px
+  )
+) !default;
+
+/**
+  // Usage:
+  @use './components/DesignSystem/design-tokens/breakpoint' as b;
+
+  @include b.breakpoint(desktop) {
+    .my_class {}
+  }
+
+  // will be compiled to this
+  @media (min-width: 840px) {
+    .my_class {}
+  }
+ */
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoint_map, $breakpoint) {
+    @media #{inspect(map-get($breakpoint_map, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
